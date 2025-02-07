@@ -1,0 +1,192 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Fuente Roboto */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    color: #284B8C;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en diferentes filas si es necesario */
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    max-width: 300px; /* Ajustar el tamaño máximo del logo */
+    height: auto;
+    padding: 10px;
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.user-info {
+    flex: 1;
+    text-align: right;
+    padding: 0px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #000; /* Fondo negro para el nav */
+    padding: 0px 0; /* Añadir padding al nav */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* Barra de búsqueda */
+header form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 500px; /* Limita el tamaño máximo de la barra de búsqueda */
+}
+
+/* Estilo del input de búsqueda */
+header .input-group input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo del botón de búsqueda */
+header .input-group button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header .input-group button:hover {
+    background-color: #0056b3;
+}
+
+.navbar-nav a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Asegura que las columnas se mantengan a la par */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Asegura que las columnas tengan el 50% en pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .col-12.col-md-6 {
+        width: 50%; /* Cada columna toma la mitad del espacio */
+    }
+}
+
+/* En pantallas pequeñas, las columnas se apilan */
+@media (max-width: 767px) {
+    .col-12.col-md-6 {
+        width: 100%; /* Apilar las columnas */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .navbar .navbar-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    main .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main .col-lg-8, main .col-lg-4 {
+        width: 100%;
+    }
+
+    .bg-light {
+        padding: 15px;
+    }
+
+    form .form-control {
+        padding: 8px;
+    }
+
+    .bg-light .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

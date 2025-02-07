@@ -1,0 +1,187 @@
+
+
+
+body {
+    background-color: #ebe4e4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Cabecera */
+  header {
+    background-color: #ffffff;
+    padding: 10px 0;
+  }
+  
+  header .container-fluid {
+    background-color: #fff;
+    padding: 10px 0;
+  }
+  
+  header .col-lg-4 img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar .navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+  }
+  
+  .navbar .navbar-nav .nav-link:hover {
+    color: #ff5722;
+  }
+  
+  /* Carrusel */
+  #header-carousel {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .carousel-caption .btn {
+    background-color: #ff5722;
+    border: none;
+  }
+  
+  /* Categorías */
+  .categorias-container {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px 0;
+      justify-content: space-between;
+  }
+  
+  .cat-item {
+      text-align: center;
+      flex: 1;
+      margin: 0 10px;
+      max-width: 250px;
+  }
+  
+  .cat-item img {
+      width: 100%;
+      height: auto;
+  }
+  
+  .cat-item h6 {
+      margin-top: 10px;
+  }
+  
+  /* Productos */
+  #product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  #product-list .col-lg-3 {
+    max-width: 22%;
+    flex: 0 1 auto;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #ff5722;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #343a40;
+    color: white;
+    padding: 30px 0;
+  }
+  
+  footer .footer-container h5 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  footer .footer-container p,
+  footer .footer-container .block-social li,
+  footer .footer-container .links li {
+    font-size: 0.9rem;
+  }
+  
+  footer .footer-container .block-social li a,
+  footer .footer-container .links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer .footer-container .block-social li a:hover,
+  footer .footer-container .links li a:hover {
+    color: #ff5722;
+  }
+  
+  footer .footer-container-bottom {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* Formulario de búsqueda */
+  .form-control {
+    height: 40px;
+    font-size: 1rem;
+    padding-left: 15px;
+  }
+  
+  .input-group-append .btn {
+    height: 40px;
+    padding: 0 20px;
+    background-color: #ff5722;
+    color: white;
+  }
+  
+  /* Enlaces */
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  a:hover {
+    color: #ff5722;
+  }
+  
+  /* Tiempos de transición */
+  * {
+    transition: all 0.3s ease;
+  }
+  

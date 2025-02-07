@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dental E Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda de productos dentales">
+    <meta name="keywords" content="dental, productos, tienda, online">
+    
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html" class="text-decoration-none">
+                    <img src="img/logo.jpg" alt="Logotipo" class="img-fluid">
+                </a>
+            </div>
+    
+            <!-- Barra de búsqueda -->
+            <div class="search-container">
+                <form action="" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar por producto" name="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <!-- Información de contacto y botones de login -->
+            <div class="user-info">
+                <p class="mb-1">Contacto: +57 316 301 5784</p>
+                <div id="_desktop_user_info">
+                    <div class="user-info">
+                        <a class="bon-tooltip" href="/perfil" rel="nofollow">
+                            <i class="fl-outicons-user189"></i>
+                        </a>
+                        <div class="bon-login-popup">
+                            <div class="bon-login-popup-button">
+                                <a class="bon-login btn btn-primary" href="/login" rel="nofollow">Iniciar sesión</a>
+                                <a class="bon-login btn btn-primary" href="/registro" rel="nofollow">Crear una cuenta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/checkout">Pago</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <div id="header-carousel" class="carousel slide carousel-fade mb-4" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#header-carousel" data-slide-to="1"></li>
+            <li data-target="#header-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/producto0.jpg" class="d-block w-100" alt="Producto 0">
+                <div class="carousel-caption d-none d-md-block">
+                    <!--<h5>Producto Destacado</h5>-->
+                    <!--<a href="#" class="btn btn-primary">Comprar ahora</a>-->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/producto1.jpg" class="d-block w-100" alt="Producto 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <!--<h5>Nueva Colección</h5>-->
+                    <!--<a href="#" class="btn btn-primary">Descubrir</a>-->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/producto2.jpg" class="d-block w-100" alt="Producto 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <!--<h5>Nueva Colección</h5>-->
+                    <!--<a href="#" class="btn btn-primary">Descubrir</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-5 bg-light">
+        <div class="row">
+          <!-- Banner Medios de Pago -->
+          <div class="col-lg-6 mb-4">
+            <a href="https://www.wompi.co/" target="_blank" class="text-decoration-none">
+              <div class="banner">
+                <img src="img/wompi.jpg" alt="Medios de Pago Wompi" class="img-fluid">
+                <!--<div class="banner-text">Medios de Pago Wompi</div>-->
+              </div>
+            </a>
+          </div>
+        
+          <!-- Banner Transportistas -->
+          <div class="col-lg-6 mb-4">
+            <div class="banner">
+                <div class="banner-text">Medios de Transporte</div>
+              <div class="d-flex flex-column align-items-center">
+                <!-- Coordinadora Mercantil -->
+                <a href="https://www.coordinadora.com/" target="_blank" class="mb-3">
+                  <img src="img/coordinadora-logo.jpg" alt="Coordinadora Mercantil" class="img-fluid transportista-logo">
+                </a>
+                <!-- Interrapidísimo -->
+                <a href="https://www.interrapidisimo.com/" target="_blank">
+                  <img src="img/interrapidisimo-logo.png" alt="Interrapidísimo" class="img-fluid transportista-logo">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <!-- Categorías -->
+    <div class="fondo-azul">
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Categorías</h2>
+        <div class="categorias-container d-flex flex-nowrap overflow-auto">
+            <a href="ruta-a-tu-sitio-especifico.html" class="cat-item text-center mx-2">
+                <img src="../img/resinas.png" alt="Resinas 3D">
+                <h6>Resinas 3D</h6>
+            </a>
+            <a href="ruta-a-tu-sitio-especifico.html" class="cat-item text-center mx-2">
+                <img src="../img/Micromotor-Para-Laboratorio-Eco-450.png" alt="Micromotores">
+                <h6>Micromotores</h6>
+            </a>
+            <a href="ruta-a-tu-sitio-especifico.html" class="cat-item text-center mx-2">
+                <img src="../img/sistema_de_inyeccion_automatica.png" alt="Laboratorio">
+                <h6>Laboratorio</h6>
+            </a>
+            <a href="ruta-a-tu-sitio-especifico.html" class="cat-item text-center mx-2">
+                <img src="../img/acrilico y dientes.jpeg" alt="Acrílico y Dientes">
+                <h6>Acrílico y Dientes</h6>
+            </a>
+        </div>
+    </section>
+</div>
+
+    <!-- Productos -->
+    <main class="container mt-4">
+        <h2 class="text-center mb-4">Catálogo de Productos</h2>
+        <div id="product-list" class="row">
+            <!-- Productos cargados dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Nuestra Tienda</h5>
+                    <p>Dirección, Ciudad, País</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Redes Sociales</h5>
+                    <ul class="block-social">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Mi Cuenta</h5>
+                    <ul class="links">
+                        <li><a href="#">Inicio de sesión</a></li>
+                        <li><a href="#">Mis pedidos</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <div class="block_newsletter">
+                        <input type="email" placeholder="Ingresa tu email">
+                        <button>Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container-bottom">
+            <div class="container">
+                <p>&copy; 2024 Tienda Virtual. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const productList = document.getElementById("product-list");
+            const cartContainer = document.getElementById("cart-items"); // Contenedor donde se mostrará el carrito
+    
+            // Cargar los productos desde el archivo CSV
+            Papa.parse('/data/productos.csv', {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    const productos = results.data.filter(producto => producto.imagen && producto.nombre && producto.precio);
+                    if (productos.length === 0) {
+                        productList.innerHTML = '<p class="text-muted">No hay productos disponibles.</p>';
+                        return;
+                    }
+                    productos.forEach(producto => {
+                        const productItem = document.createElement("div");
+                        productItem.className = "col-lg-3 col-md-4 col-sm-6 pb-3";
+                        productItem.innerHTML = `
+                            <div class="card h-100">
+                                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">${producto.nombre}</h5>
+                                    <p class="card-text text-primary">${producto.precio}</p>
+                                    <button class="btn btn-sm btn-outline-primary" onclick="addToCart('${producto.nombre}', ${parseFloat(producto.precio.replace(/[^\d.-]/g, ''))})">Añadir al carrito</button>
+                                </div>
+                            </div>
+                        `;
+                        productList.appendChild(productItem);
+                    });
+                },
+                error: function (err) {
+                    console.error("Error al cargar productos:", err);
+                    productList.innerHTML = '<p class="text-danger">Error al cargar productos.</p>';
+                }
+            });
+    
+            // Obtener carrito desde localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Función para agregar productos al carrito
+            function addToCart(product, price) {
+                console.log(`Producto añadido: ${product}, Precio: ${price}`); // Verifica que el evento se dispare
+                const existingProduct = cart.find(item => item.product === product);
+                if (existingProduct) {
+                    existingProduct.quantity++;
+                } else {
+                    cart.push({ product, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+                displayCart();
+            }
+    
+            // Función para actualizar el carrito
+            function updateCart() {
+                // Asegurarse de que el carrito esté actualizado en el almacenamiento local
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+    
+            // Función para mostrar los productos del carrito en la interfaz
+            function displayCart() {
+                const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+                cartContainer.innerHTML = ''; // Limpiar el contenido previo
+    
+                if (cartItems.length === 0) {
+                    cartContainer.innerHTML = '<p>No hay productos en el carrito.</p>';
+                    return;
+                }
+    
+                cartItems.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+                    itemElement.innerHTML = `
+                        <p>${item.product} - $${item.price} x ${item.quantity}</p>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                });
+            }
+    
+            // Llamar a displayCart al cargar la página para mostrar los productos del carrito si existen
+            displayCart();
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    
+</body>
+</html>
+           
