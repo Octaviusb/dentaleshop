@@ -17,15 +17,24 @@ header {
 
 /* Contenedor superior: logo, barra de búsqueda y login */
 .container-fluid {
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  background-color: #fff;
 }
 
 /* Logo */
 header .logo img {
   max-height: 150px; /* Ajusta el tamaño del logo */
+}
+
+.logo img {
+  max-width: 250px; 
+  height: auto;
+  display: block;
+  margin: 0 auto; 
 }
 
 /* Barra de búsqueda */
@@ -74,6 +83,62 @@ header .user-info .btn {
   margin-top: 5px;
 }
 
+header .user-info p.mb-1 {
+  margin-right: 30px;
+}
+
+.user-container {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  color: black;
+  text-decoration: none;
+}
+
+.login-popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.user-container:hover .login-popup {
+  visibility: visible;
+  opacity: 1;
+}
+
+.login-popup-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-btn {
+  display: block;
+  width: 150px;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background: #333;
+}
+
 /* Navbar */
 .navbar {
   background-color: #343A40;
@@ -91,11 +156,6 @@ header .user-info .btn {
   color: #007BFF;
 }
 
-.container-fluid {
-  padding: 0;
-  max-width: 100%;
-}
-
 .navbar {
   width: 100%;
   margin: 5px;
@@ -106,11 +166,6 @@ header .user-info .btn {
 body {
   background-color: #F0F8FF; 
   color: rgb(255, 255, 255); 
-}
-
-/* Encabezado */
-.container-fluid {
-  background-color: #fff; 
 }
 
 /* Textos principales */
