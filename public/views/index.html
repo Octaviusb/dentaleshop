@@ -53,35 +53,26 @@
             <!-- Información de contacto y botones de login -->
             <div class="user-info">
                 <p class="mb-1">Contacto: +57 316 301 5784</p>
-                <div id="_desktop_user_info">
-                    <div class="user-container">
-                        <!-- Icono de usuario -->
-                        <a href="#" id="login-icon" class="user-icon">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div id="login-popup" class="popup">
-                            <div class="login-popup-button">
-                                <a class="login-btn" href="/login" rel="nofollow">INICIAR SESIÓN</a>
-                                <a class="login-btn" href="/registro" rel="nofollow">CREAR UNA CUENTA</a>
-                            </div>
-                        </div>
-                    
-                        <!-- Icono de corazón -->
-                        <a href="#" id="heart-icon" class="user-icon">
-                            <i class="fa-solid fa-heart"></i>
-                        </a>
-                        <div id="heart-popup" class="popup">
-                            <p>Lista de deseos vacía</p>
-                        </div>
-                    
-                        <!-- Icono de carrito -->
-                        <a href="#" id="cart-icon" class="user-icon">
-                            <i class="fa-solid fa-shopping-cart"></i>
-                        </a>
-                        <div id="cart-popup" class="popup">
-                            <p>Tu carrito está vacío</p>
-                        </div>
-                    </div>                                        
+                <div class="user-container">
+                    <i id="login-icon" class="fas fa-user user-icon" data-popup="login-popup"></i>
+                    <i id="heart-icon" class="fa-solid fa-heart user-icon" data-popup="heart-popup"></i>
+                    <i id="cart-icon" class="fa-solid fa-shopping-cart user-icon" data-popup="cart-popup"></i>
+                </div>
+                
+                <div id="login-popup" class="popup">
+                    <a class="login-btn" href="/login" rel="nofollow">Iniciar Sesión</a>
+                    <a class="login-btn" href="/registro" rel="nofollow">Crear una Cuenta</a>
+                </div>
+                
+                <div id="heart-popup" class="popup">
+                    <p>Lista de deseos vacía.</p>
+                </div>
+                
+                <div id="cart-popup" class="popup">
+                    <p>Carrito vacío.</p>
+                    <a class="nav-link" href="/cart"> Ver Carrito</a>
+                </div>
+                                   
                 </div>
             </div>
         </div>
@@ -247,90 +238,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const productList = document.getElementById("product-list");
-            const cartContainer = document.getElementById("cart-items"); // Contenedor donde se mostrará el carrito
-    
-            // Cargar los productos desde el archivo CSV
-            Papa.parse('/data/productos.csv', {
-                download: true,
-                header: true,
-                complete: function (results) {
-                    const productos = results.data.filter(producto => producto.imagen && producto.nombre && producto.precio);
-                    if (productos.length === 0) {
-                        productList.innerHTML = '<p class="text-muted">No hay productos disponibles.</p>';
-                        return;
-                    }
-                    productos.forEach(producto => {
-                        const productItem = document.createElement("div");
-                        productItem.className = "col-lg-3 col-md-4 col-sm-6 pb-3";
-                        productItem.innerHTML = `
-                            <div class="card h-100">
-                                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">${producto.nombre}</h5>
-                                    <p class="card-text text-primary">${producto.precio}</p>
-                                    <button class="btn btn-sm btn-outline-primary" onclick="addToCart('${producto.nombre}', ${parseFloat(producto.precio.replace(/[^\d.-]/g, ''))})">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        `;
-                        productList.appendChild(productItem);
-                    });
-                },
-                error: function (err) {
-                    console.error("Error al cargar productos:", err);
-                    productList.innerHTML = '<p class="text-danger">Error al cargar productos.</p>';
-                }
-            });
-    
-            // Obtener carrito desde localStorage
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-            // Función para agregar productos al carrito
-            function addToCart(product, price) {
-                console.log(`Producto añadido: ${product}, Precio: ${price}`); // Verifica que el evento se dispare
-                const existingProduct = cart.find(item => item.product === product);
-                if (existingProduct) {
-                    existingProduct.quantity++;
-                } else {
-                    cart.push({ product, price, quantity: 1 });
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCart();
-                displayCart();
-            }
-    
-            // Función para actualizar el carrito
-            function updateCart() {
-                // Asegurarse de que el carrito esté actualizado en el almacenamiento local
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-    
-            // Función para mostrar los productos del carrito en la interfaz
-            function displayCart() {
-                const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-                cartContainer.innerHTML = ''; // Limpiar el contenido previo
-    
-                if (cartItems.length === 0) {
-                    cartContainer.innerHTML = '<p>No hay productos en el carrito.</p>';
-                    return;
-                }
-    
-                cartItems.forEach(item => {
-                    const itemElement = document.createElement('div');
-                    itemElement.className = 'cart-item';
-                    itemElement.innerHTML = `
-                        <p>${item.product} - $${item.price} x ${item.quantity}</p>
-                    `;
-                    cartContainer.appendChild(itemElement);
-                });
-            }
-    
-            // Llamar a displayCart al cargar la página para mostrar los productos del carrito si existen
-            displayCart();
-        });
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/main.js"></script>

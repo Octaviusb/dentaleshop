@@ -1,33 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loginIcon = document.getElementById("login-icon");
-    const heartIcon = document.getElementById("heart-icon");
-    const cartIcon = document.getElementById("cart-icon");
+    // Cambiamos el selector para que coincida con tu HTML
+    const icons = document.querySelectorAll("i.user-icon"); // Cambiado de ".user-icon i" a "i.user-icon"
+    const popups = document.querySelectorAll(".popup");
 
-    loginIcon.addEventListener("click", function () {
-        abrirPopup("login-popup");
-    });
+    function mostrarPopup(icon) {
+        cerrarPopups();
 
-    heartIcon.addEventListener("click", function () {
-        abrirPopup("heart-popup");
-    });
+        const popupId = icon.dataset.popup;
+        const popup = document.getElementById(popupId);
 
-    cartIcon.addEventListener("click", function () {
-        abrirPopup("cart-popup");
-    });
-});
+        if (popup) {
+            popup.classList.add("active");
 
-function abrirPopup(id) {
-    document.getElementById(id).style.display = "flex";
-}
+            // Posicionamiento mejorado
+            const iconRect = icon.getBoundingClientRect();
+            const popupRect = popup.getBoundingClientRect();
+            
+            let left = iconRect.left + window.scrollX;
+            let top = iconRect.bottom + window.scrollY + 5;
 
-function cerrarPopup(id) {
-    document.getElementById(id).style.display = "none";
-}
+            // Evitar que el popup se salga de la ventana
+            if (left + popupRect.width > window.innerWidth) {
+                left = window.innerWidth - popupRect.width - 10;
+            }
 
-
-    function renderizarProductos() {
-        // Implementa tu lógica para renderizar los productos en la tienda
+            popup.style.top = `${top}px`;
+            popup.style.left = `${left}px`;
+        }
     }
 
-    renderizarProductos();
+    function ocultarPopup(popup) {
+        setTimeout(() => {
+            if (!popup.matches(":hover") && !document.querySelector("i.user-icon:hover")) {
+                popup.classList.remove("active");
+            }
+        }, 300);
+    }
+
+    function cerrarPopups() {
+        popups.forEach(popup => popup.classList.remove("active"));
+    }
+
+    icons.forEach(icon => {
+        icon.addEventListener("mouseenter", function() {
+            mostrarPopup(this);
+        });
+    });
+
+    popups.forEach(popup => {
+        popup.addEventListener("mouseleave", function() {
+            ocultarPopup(this);
+        });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".user-icon") && !event.target.closest(".popup")) {
+            cerrarPopups();
+        }
+    });
 });

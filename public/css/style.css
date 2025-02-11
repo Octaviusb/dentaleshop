@@ -86,57 +86,67 @@ header .user-info .btn {
 header .user-info p.mb-1 {
   margin-right: 30px;
 }
-
 .user-container {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  gap: 20px; /* Espacio entre iconos */
+  position: relative; /* Necesario para los popups */
 }
 
 .user-icon {
-  font-size: 24px; /* Ajusta el tamaño del ícono */
-  color: black;
+  font-size: 1.5rem;
+  color: #333;
   text-decoration: none;
+  position: relative;
+  padding: 10px; /* Espaciado alrededor del icono */
 }
 
-.login-popup {
-  visibility: hidden;
-  opacity: 0;
+.popup {
+  display: none;
   position: absolute;
-  top: 40px;
-  right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
+  background: white; /* o el color que prefieras */
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.user-container:hover .login-popup {
-  visibility: visible;
-  opacity: 1;
+.popup.active {
+  display: block;
 }
 
-.login-popup-button {
-  display: flex;
-  flex-direction: column;
+.user-icon {
+  cursor: pointer;
+  position: relative;
 }
 
+/* Estilos para los botones de login */
 .login-btn {
   display: block;
-  width: 150px;
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: 8px 16px;
+  margin: 5px 0;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 4px;
 }
 
 .login-btn:hover {
-  background: #333;
+  background-color: #e0e0e0;
+}
+
+.cart-link {
+  display: block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cart-link:hover {
+  background-color: #e0e0e0;
 }
 
 /* Navbar */
@@ -201,16 +211,6 @@ a {
 
 a:hover {
   color: #1e7e34; 
-}
-
-/* Footer */
-footer {
-  background-color: #343A40; 
-  color: #F0F8FF; 
-}
-
-.fondo-azul {
-  background-color: #284B8C;
 }
 
 /* Categorías */
@@ -304,3 +304,12 @@ footer {
   flex-direction: column;
 }
 
+/* Footer */
+footer {
+  background-color: #343A40; 
+  color: #F0F8FF; 
+}
+
+.fondo-azul {
+  background-color: #284B8C;
+}
