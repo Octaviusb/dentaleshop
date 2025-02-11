@@ -55,18 +55,33 @@
                 <p class="mb-1">Contacto: +57 316 301 5784</p>
                 <div id="_desktop_user_info">
                     <div class="user-container">
-                        <a href="#" class="user-icon">
+                        <!-- Icono de usuario -->
+                        <a href="#" id="login-icon" class="user-icon">
                             <i class="fas fa-user"></i>
-                            <i class="fa-solid fa-heart"></i>
-                            <i class="fa-solid fa-shopping-cart"></i>
                         </a>
-                        <div class="login-popup">
+                        <div id="login-popup" class="popup">
                             <div class="login-popup-button">
                                 <a class="login-btn" href="/login" rel="nofollow">INICIAR SESIÓN</a>
                                 <a class="login-btn" href="/registro" rel="nofollow">CREAR UNA CUENTA</a>
                             </div>
                         </div>
-                    </div>                    
+                    
+                        <!-- Icono de corazón -->
+                        <a href="#" id="heart-icon" class="user-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                        <div id="heart-popup" class="popup">
+                            <p>Lista de deseos vacía</p>
+                        </div>
+                    
+                        <!-- Icono de carrito -->
+                        <a href="#" id="cart-icon" class="user-icon">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                        </a>
+                        <div id="cart-popup" class="popup">
+                            <p>Tu carrito está vacío</p>
+                        </div>
+                    </div>                                        
                 </div>
             </div>
         </div>
